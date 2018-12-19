@@ -9,5 +9,5 @@ sync:
 	cp ./gitconfig		~/.gitconfig
 
 push:
-	git push origin
+	git push origin master
 
