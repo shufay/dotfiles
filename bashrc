@@ -116,4 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
+# Sourcing
 source ~/.profile
+source /etc/environment

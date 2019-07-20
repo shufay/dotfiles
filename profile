@@ -39,3 +39,19 @@ export PYTHIA8DATA=$PYTHIA8/share/Pythia8/xmldoc
 # TERMINAL
 export PS1="\[\e[0m\]\w \[\e[36m\]\$ \[\e[0m\]"
 
+# STK
+export LD_LIBRARY_PATH=/usr/local/STK/stk11.5.0/bin:$LD_LIBRARY_PATH
+export STK_INSTALL_DIR=/usr/local/STK/stk11.5.0
+export STK_CONFIG_DIR=$HOME
+
+# JAVA
+export JAVA_HOME=/usr/
+export PATH=$JAVA_HOME/bin:$PATH
+export PATH_TO_FX=/usr/local/javafx-sdk-11.0.2/lib
+
+# PSI4
+#export PYTHONPATH=$HOME/psi4conda
+#export PSI_SCRATCH=$HOME/psi4conda/scratch
+
+# VIRTUALENWRAPPER
+#source /usr/local/bin/virtualenvwrapper.sh

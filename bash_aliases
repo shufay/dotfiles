@@ -8,3 +8,10 @@ alias pbcopy='xsel -ib'
 alias pbpaste='xsel -ob'
 alias g='git'
 
+alias eclipse='~/eclipse/java-2019-03/eclipse/eclipse'
+
+# Jupyter lab
+alias jl='~/.local/bin/jupyter-lab'
+
+# Jupyter
+alias jupyter='~/.local/bin/jupyter' 

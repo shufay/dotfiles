@@ -10,7 +10,7 @@ Plug 'sjl/badwolf'
 Plug 'davidhalter/jedi-vim'
 
 " Utility
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
 Plug 'terryma/vim-multiple-cursors'
@@ -71,6 +71,9 @@ set showmatch               " show matching brackets
 set laststatus=2
 set lazyredraw
 set visualbell
+
+" Nerdtree configuration 
+"autocmd vimenter * NERDTree
 
 " Key Mappings
 " <TAB>: completion.
