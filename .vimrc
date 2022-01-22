@@ -7,7 +7,7 @@ Plug 'fxn/vim-monochrome'
 Plug 'sjl/badwolf'
 
 " Python support
-Plug 'davidhalter/jedi-vim'
+"Plug 'davidhalter/jedi-vim'
 
 " Utility
 "Plug 'scrooloose/nerdtree'
@@ -16,6 +16,7 @@ Plug 'junegunn/fzf'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-jedi', { 'for': 'python' }
+Plug 'airblade/vim-gitgutter'
 
 " Generic programming support
 Plug 'Townk/vim-autoclose'
@@ -30,6 +31,7 @@ colo goodwolf
 hi NonText      ctermbg=none
 hi Normal       ctermbg=none
 hi LineNr       ctermbg=232 ctermfg=239
+hi CursorLineNr term=bold cterm=bold ctermbg=none ctermfg=222 
 hi DiffChange   ctermbg=232
 hi Comment      ctermbg=none
 hi clear SignColumn
@@ -47,7 +49,7 @@ set matchtime=0
 set shortmess+=c
 set completeopt=menuone,menu,longest
 set pumheight=15    " Limit height to 15 max
-set clipboard=unnamedplus
+set clipboard=unnamed
 set pastetoggle=<F2>
 set fillchars+=vert:\|
 syntax enable
@@ -72,9 +74,6 @@ set laststatus=2
 set lazyredraw
 set visualbell
 
-" Nerdtree configuration 
-"autocmd vimenter * NERDTree
-
 " Key Mappings
 " <TAB>: completion.
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -84,3 +83,22 @@ imap <c-x><c-k> <plug>(fzf-complete-word)
 imap <c-x><c-f> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" Nerdtree configuration 
+"autocmd vimenter * NERDTree
+
+" vim-multiple-cursors configuration
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<C-a>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<C-a>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+
+" vim-gitgutter configuration
+set updatetime=100
