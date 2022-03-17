@@ -36,6 +36,14 @@ hi DiffChange   ctermbg=232
 hi Comment      ctermbg=none
 hi clear SignColumn
 
+" 80 character line
+if exists('+colorcolumn')
+  set colorcolumn=80
+
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 set tabstop=4
 set shiftwidth=4    " 1 tab == 4 spaces
 set expandtab   " expand tabs into spaces
@@ -49,7 +57,7 @@ set matchtime=0
 set shortmess+=c
 set completeopt=menuone,menu,longest
 set pumheight=15    " Limit height to 15 max
-set clipboard=unnamed
+set clipboard=unnamedplus
 set pastetoggle=<F2>
 set fillchars+=vert:\|
 syntax enable
@@ -102,3 +110,4 @@ let g:multi_cursor_quit_key            = '<Esc>'
 
 " vim-gitgutter configuration
 set updatetime=100
+
