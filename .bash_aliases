@@ -25,6 +25,12 @@ alias pauling="ssh suung@pauling.caltech.edu"
 # Reichman Rocks
 alias rocks="ssh rocks"
 
+# Office desktop
+alias office="ssh office"
+
+# Ginsburg
+alias gb="ssh su2254@ginsburg.rcs.columbia.edu"
+
 # Keyboard
 alias ll='ls -alF'
 alias la='ls -A'

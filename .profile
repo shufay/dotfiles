@@ -23,4 +23,13 @@ export PYTHONPATH=~/Documents/moire/pyscf
 export LD_LIBRARY_PATH=/Users/shufay/Documents/quantum_chemistry/pyscf_dfgmp2_v2/pyscf/lib/.:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/Users/shufay/Documents/quantum_chemistry/pyscf_dfgmp2_v2/pyscf/lib/./deps/lib:$LD_LIBRARY_PATH
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
+if command -v pyenv 1>/dev/null 2>&1; then
+ eval "$(pyenv init -)"
+fi
+
+export WORKON_HOME=~/envs
+#eval "$(pyenv init -)"
