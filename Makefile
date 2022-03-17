@@ -6,6 +6,3 @@ sync:
 	cp ./.vimrc			~/.vimrc
 	cp ./.gitconfig		~/.gitconfig
 
-push:
-	git push origin master
-
