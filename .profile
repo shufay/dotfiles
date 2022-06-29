@@ -7,12 +7,29 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 # if running bash
-#if [ -n "$BASH_VERSION" ]; then
+if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
-#    if [ -f "$HOME/.bashrc" ]; then
-#	. "$HOME/.bashrc";
-#    fi
-#fi
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc";
+    fi
+fi
+
+# scp for Ginsburg
+scp_from_gb() {
+  scp su2254@motion.rcs.columbia.edu:"$1" "$2"
+}
+
+scp_dir_from_gb() {
+  scp -r su2254@motion.rcs.columbia.edu:"$1" "$2"
+}
+
+scp_to_gb() {
+    scp "$1" su2254@motion.rcs.columbia.edu:"$2"
+}
+
+scp_dir_to_gb() {
+    scp -r "$1" su2254@motion.rcs.columbia.edu:"$2"
+}
 
 # TERMINAL
 export PS1="\[\e[0m\]\w \[\e[36m\]\$ \[\e[0m\]"

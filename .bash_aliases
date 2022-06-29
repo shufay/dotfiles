@@ -30,8 +30,10 @@ alias office="ssh office"
 
 # Ginsburg
 alias gb="ssh su2254@ginsburg.rcs.columbia.edu"
+alias sftp@gb="sftp su2254@ginsburg.rcs.columbia.edu"
+alias @gb="su2254@motion.rcs.columbia.edu"
 
 # Keyboard
-alias ll='ls -alF'
+alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -CF'
