@@ -9,18 +9,21 @@ Plug 'sjl/badwolf'
 " Python support
 "Plug 'davidhalter/jedi-vim'
 
+" Copilot
+Plug 'github/copilot.vim'
+
 " Utility
 "Plug 'scrooloose/nerdtree'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-jedi', { 'for': 'python' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/vim-easy-align'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'airblade/vim-gitgutter'
+Plug 'Townk/vim-autoclose'
+"Plug 'Shougo/deoplete.nvim'
+"Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 
 " Generic programming support
-Plug 'Townk/vim-autoclose'
-Plug 'neomake/neomake'
+"Plug 'neomake/neomake'
 
 call plug#end()
 filetype plugin indent on
@@ -57,7 +60,7 @@ set matchtime=0
 set shortmess+=c
 set completeopt=menuone,menu,longest
 set pumheight=15    " Limit height to 15 max
-set clipboard=unnamedplus
+set clipboard=unnamed
 set pastetoggle=<F2>
 set fillchars+=vert:\|
 syntax enable
@@ -111,3 +114,8 @@ let g:multi_cursor_quit_key            = '<Esc>'
 " vim-gitgutter configuration
 set updatetime=100
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
