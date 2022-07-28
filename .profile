@@ -7,29 +7,32 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 # if running bash
-#if [ -n "$BASH_VERSION" ]; then
+if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
-#    if [ -f "$HOME/.bashrc" ]; then
-#	. "$HOME/.bashrc";
-#    fi
-#fi
-
-# TERMINAL
-export PS1="\[\e[0m\]\w \[\e[36m\]\$ \[\e[0m\]"
-export TERM="xterm-256color"
-
-# pyscf
-export PYTHONPATH=~/Documents/moire/pyscf
-export LD_LIBRARY_PATH=/Users/shufay/Documents/quantum_chemistry/pyscf_dfgmp2_v2/pyscf/lib/.:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/Users/shufay/Documents/quantum_chemistry/pyscf_dfgmp2_v2/pyscf/lib/./deps/lib:$LD_LIBRARY_PATH
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc";
+    fi
 fi
 
-export WORKON_HOME=~/envs
-#eval "$(pyenv init -)"
+# Terminal
+export PS1="\[\e[0m\]\w \[\e[36m\]ginsburg \$ \[\e[0m\]"
+export TERM="xterm-256color"
+
+# Load modules
+module load intel-parallel-studio/2020
+module load openmpi/gcc/64/1.10.7
+module load mpich/ge/gcc/64/3.3.2
+module load blas/gcc/64/3.8.0
+module load gcc/10.2.0
+module load lapack/gcc/64/3.9.0
+module load cmake/3.22.1
+module load jupyter/12.0.0
+module load anaconda/3-2021.11
+
+# PySCF
+export PYTHONPATH=~/libs/shufay_pyscf
+export PYTHONPATH=~/moire/moire:$PYTHONPATH
+export LD_PRELOAD=$MKLROOT/lib/intel64/libmkl_def.so:$MKLROOT/lib/intel64/libmkl_sequential.so:$MKLROOT/lib/intel64/libmkl_core.so
+
+# Scratch directory
+export SCRATCHDIR=/burg/ccce/users/su2254
