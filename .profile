@@ -14,6 +14,23 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# scp for Ginsburg
+scp_from_gb() {
+  scp su2254@motion.rcs.columbia.edu:"$1" "$2"
+}
+
+scp_dir_from_gb() {
+  scp -r su2254@motion.rcs.columbia.edu:"$1" "$2"
+}
+
+scp_to_gb() {
+    scp "$1" su2254@motion.rcs.columbia.edu:"$2"
+}
+
+scp_dir_to_gb() {
+    scp -r "$1" su2254@motion.rcs.columbia.edu:"$2"
+}
+
 # Terminal
 export PS1="\[\e[0m\]\w \[\e[36m\]ginsburg \$ \[\e[0m\]"
 export TERM="xterm-256color"
