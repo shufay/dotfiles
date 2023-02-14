@@ -31,25 +31,61 @@ scp_dir_to_gb() {
     scp -r "$1" su2254@motion.rcs.columbia.edu:"$2"
 }
 
+# scp for office PC
+scp_from_office() {
+  scp -P 22142 shufay@128.59.114.230:"$1" "$2"
+  }
+
+  scp_dir_from_office() {
+    scp -r -P 22142 shufay@128.59.114.230:"$1" "$2"
+}
+
+scp_to_office() {
+    scp -P 22142 "$1" shufay@128.59.114.230:"$2"
+}
+
+scp_dir_to_office() {
+    scp -r -P 22142 "$1" shufay@128.59.114.230:"$2"
+}
+
 # Terminal
-export PS1="\[\e[0m\]\w \[\e[36m\]ginsburg \$ \[\e[0m\]"
+export PS1="\[\e[0m\]\w \[\e[36m\]bridges-2 \$ \[\e[0m\]"
 export TERM="xterm-256color"
+export CLICOLOR=1 # For `ls` colorized output.
+export LSCOLORS=gxfxcxdxbxegedabagacad
 
 # Load modules
-module load intel-parallel-studio/2020
-module load openmpi/gcc/64/1.10.7
-module load mpich/ge/gcc/64/3.3.2
-module load blas/gcc/64/3.8.0
+module load intel/2021.3.0
+module load mkl/2020.4.304
+module load openmpi/4.1.1-gcc8.3.1
+module load intelmpi/2021.3.0-intel2021.3.0
+#module load openblas/0.3.13-intel20.4
 module load gcc/10.2.0
-module load lapack/gcc/64/3.9.0
-module load cmake/3.22.1
-module load jupyter/12.0.0
-module load anaconda/3-2021.11
+module load fftw/3.3.8
+module load julia/1.5.2
+module load anaconda3/2020.11
+module load python/3.8.6
 
 # PySCF
-export PYTHONPATH=~/libs/shufay_pyscf
-export PYTHONPATH=~/moire/moire:$PYTHONPATH
-export LD_PRELOAD=$MKLROOT/lib/intel64/libmkl_def.so:$MKLROOT/lib/intel64/libmkl_sequential.so:$MKLROOT/lib/intel64/libmkl_core.so
+export PYTHONPATH=~/libs/pyscf:$PYTHONPATH
+export PYTHONPATH=~/in_prep/2deg:$PYTHONPATH
+#export LD_PRELOAD=$MKLROOT/lib/intel64/libmkl_def.so:$MKLROOT/lib/intel64/libmkl_sequential.so:$MKLROOT/lib/intel64/libmkl_core.so
+
+# MKL
+export LD_LIBRARY_PATH=/jet/packages/intel/mkl/lib/intel64:$LD_LIBRARY_PATH
 
 # Scratch directory
-export SCRATCHDIR=/burg/ccce/users/su2254
+export SCRATCHDIR=${PROJECT}
+
+# QChem
+export QC=$HOME/qchem
+export QCSCRATCH=$SCRATCHDIR/qchem
+export QC_EXT_LIBS=$QCSCRATCH/extlibs
+
+# svn
+export SVNROOT=https://jubilee.q-chem.com/svnroot
+export QCSVN=$SVNROOT/qchem              #Q-Chem source code repository
+export QCREFSVN=$SVNROOT/qchem_dailyref  #Q-Chem reference output repository
+export QCAUXSVN=$SVNROOT/qcaux           #Q-Chem auxiliary files repository
+export QCMANUAL=$SVNROOT/qchem_manual    #Q-Chem Manual repository
+export SVN_EDITOR=vim                    #optional, change the default editor for SVN

@@ -18,6 +18,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/vim-easy-align'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'Townk/vim-autoclose'
 "Plug 'Shougo/deoplete.nvim'
 "Plug 'zchee/deoplete-jedi', { 'for': 'python' }

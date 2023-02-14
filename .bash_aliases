@@ -3,6 +3,7 @@ alias reset_usb="sudo usbmuxd -u -U usbmux"
 alias tmux="TERM=screen-256color tmux"
 alias pbcopy='xsel -ib'
 alias pbpaste='xsel -ob'
+alias rm='rm -I'
 
 # Jupyter lab
 alias jl="jupyter-lab"
@@ -26,14 +27,22 @@ alias pauling="ssh suung@pauling.caltech.edu"
 alias rocks="ssh rocks"
 
 # Office desktop
-alias office="ssh office"
+alias office="ssh office_pc"
 
 # Ginsburg
 alias gb="ssh su2254@ginsburg.rcs.columbia.edu"
+alias ruth="ssh su2254@ruth.rcs.columbia.edu"
+alias bader="ssh su2254@bader.rcs.columbia.edu"
 alias sftp@gb="sftp su2254@ginsburg.rcs.columbia.edu"
 alias @gb="su2254@motion.rcs.columbia.edu"
 
+# Bridges-2
+alias br2="ssh shufay@bridges2.psc.edu"
+
+# Expanse
+alias exp="ssh -l shufay expanse.sdsc.xsede.org"
+
 # Keyboard
-alias ll='ls -alFh'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='ls -alFhG'
+alias la='ls -AG'
+alias l='ls -CG'
